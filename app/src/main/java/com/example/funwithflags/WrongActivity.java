@@ -43,7 +43,12 @@ public class WrongActivity extends AppCompatActivity {
 
         //set Picture and Text
         tv_score.setText("Score: " + score);
-        tv_wrong.setText(answer);
+        if(!(answer.equals("Select Country"))){
+            tv_wrong.setText(answer);
+        }
+        else{
+            tv_wrong.setText("");
+        }
         tv_correct.setText(land);
         int img_wrong_id = getResources().getIdentifier(answer_iso, "drawable", getPackageName());
         img_wrong.setImageResource(img_wrong_id);
