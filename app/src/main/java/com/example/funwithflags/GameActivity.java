@@ -77,7 +77,7 @@ public class GameActivity extends AppCompatActivity {
         }catch(Exception e){
             e.printStackTrace();
         }
-        int imageID =getResources().getIdentifier(iso, "drawable", getPackageName());
+        int imageID = getResources().getIdentifier(iso, "drawable", getPackageName());
         flagge.setImageResource(imageID);
     }
 
@@ -182,9 +182,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public boolean check(){
-        if(dropdown.getText().equals(land)){
-            return true;
-        }
-        return false;
+        return dropdown.getText().equals(land);
     }
 }

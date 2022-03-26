@@ -24,4 +24,12 @@
         android:onClick="launchGame"
         android:text="Start" />
 
+    <TextView
+        android:id="@+id/txt_highscore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="" />
+
 </LinearLayout>
