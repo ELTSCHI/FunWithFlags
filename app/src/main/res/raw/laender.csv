@@ -1,35 +1,35 @@
-1,Andorra,ad
-2,United Arab Emirates,ae
-3,Afghanistan,af
-4,Antigua and Barbuda,ag
+1,Fürstentum Andorra,ad
+2,Vereinigte Arabische Emirate,ae
+3,Islamischer Staat Afghanistan,af
+4,Antigua und Barbuda,ag
 5,Anguilla,ai
-6,Albania,al
-7,Armenia,am
-8,Angola,ao
-9,Antarctica,aq
-10,Argentina,ar
-11,American Samoa,as
-12,Austria,at
-13,Australia,au
+6,Republik Albanien,al
+7,Republik Armenien,am
+8,Republik Angola,ao
+9,Antarktis,aq
+10,Argentinische Republik,ar
+11,Amerikanisch-Samoa,as
+12,Österreich,at
+13,Australien,au
 14,Aruba,aw
-15,Åland Islands,ax
-16,Azerbaijan,az
-17,Bosnia and Herzegovina,ba
+15,Åland,ax
+16,Republik Aserbaidschan,az
+17,Bosnien und Herzegowina,ba
 18,Barbados,bb
-19,Bangladesh,bd
-20,Belgium,be
+19,Bangladesch,bd
+20,Belgien,be
 21,Burkina Faso,bf
-22,Bulgaria,bg
-23,Bahrain,bh
+22,Bulgarien,bg
+23,Königreich Bahrain,bh
 24,Burundi,bi
 25,Benin,bj
-26,Saint Barthélemy,bl
+26,Saint-Barthélemy,bl
 27,Bermuda,bm
 28,Brunei Darussalam,bn
-29,Bolivia (Plurinational State of),bo
-30,"Bonaire, Sint Eustatius and Saba",bq
+29,Plurinationaler Staat Bolivien,bo
+30,Bonaire,bq
 31,Brazil,br
-32,Bahamas,bs
+32,Commonwealth der Bahamas,bs
 33,Bhutan,bt
 34,Bouvet Island,bv
 35,Botswana,bw
@@ -59,14 +59,14 @@
 59,Denmark,dk
 60,Dominica,dm
 61,Dominican Republic,dom
-62,Algeria,dz
+62,Demokratische Volksrepublik Algerien,dz
 63,Ecuador,ec
 64,Estonia,ee
-65,Egypt,eg
+65,Arabische Republik Ägypten,eg
 66,Western Sahara,eh
 67,Eritrea,er
 68,Spain,es
-69,Ethiopia,et
+69,Demokratische Volksrepublik Äthiopien,et
 70,Finland,fi
 71,Fiji,fj
 72,Falkland Islands (Malvinas),fk
@@ -85,7 +85,7 @@
 85,Gambia,gm
 86,Guinea,gn
 87,Guadeloupe,gp
-88,Equatorial Guinea,gq
+88,Republik Äquatorialguinea,gq
 89,Greece,gr
 90,South Georgia and the South Sandwich Islands,gs
 91,Guatemala,gt

@@ -32,6 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     //klicke auf den start button und gelange zur eigentlichen Seite, auf der man spielt
     public void launchGame(View v){
-        startActivity(new Intent(MainActivity.this, GameActivity.class));
+        startActivity(new Intent(MainActivity.this, GameModeActivity.class));
     }
 }

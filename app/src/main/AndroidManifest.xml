@@ -10,9 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FunWithFlags">
         <activity
+            android:name=".GameModeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GameMode"
+            android:exported="false" />
+        <activity
             android:name=".WrongActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GameActivity"
             android:exported="true"

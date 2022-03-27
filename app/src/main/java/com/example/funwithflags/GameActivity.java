@@ -1,7 +1,9 @@
 package com.example.funwithflags;
 
+import androidx.annotation.RawRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +22,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.opencsv.CSVReader;
+
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
@@ -35,6 +40,10 @@ public class GameActivity extends AppCompatActivity {
     private String land = "";
     private String iso = "";
     private int count;
+    private String modus;
+    private InputStream inputStream;
+    private int csv_laenge;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,21 +58,54 @@ public class GameActivity extends AppCompatActivity {
         ran = new Random();
         count = 0;
 
+        csv_laenge = laengeGeben();
+
+
         //set array list
         setArrayList();
 
         //flagge anzeigen
-        sucheIsozuInt(1 + ran.nextInt(249));
+        sucheIsozuInt(1 + ran.nextInt(csv_laenge));
 
 
     }
 
 
+    public int laengeGeben(){
+        int zaehler = 0;
+        try{
+            setGameMode();
+            CSVReader reader = new CSVReader(new InputStreamReader(inputStream));
+            while ((reader.readNext()) != null) {
+                zaehler++;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return zaehler-1;
+    }
+
+
+    public void setGameMode(){
+        modus = getIntent().getStringExtra("modus");
+        switch(modus) {
+            case "europe": inputStream = getResources().openRawResource(R.raw.laender_europe); break;
+            case "main": inputStream = getResources().openRawResource(R.raw.laender_test); break;
+            case "asia": inputStream = getResources().openRawResource(R.raw.laender_asia); break;
+            case "africa": inputStream = getResources().openRawResource(R.raw.laender_africa); break;
+            case "oceania": inputStream = getResources().openRawResource(R.raw.laender_oceania); break;
+            case "america": inputStream = getResources().openRawResource(R.raw.laender_america); break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + modus);
+        }
+    }
+
 
     //sucht die Flagge zu einem Integer
     public void sucheIsozuInt(int iso_id){
         try{
-            CSVReader reader = new CSVReader(new InputStreamReader(getResources().openRawResource(R.raw.laender)));
+            setGameMode();
+            CSVReader reader = new CSVReader(new InputStreamReader(inputStream));
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 // nextLine[] is an array of values from the line
@@ -84,7 +126,8 @@ public class GameActivity extends AppCompatActivity {
     //sucht die Flage zu einem Landesnamen
     public String sucheIsozuName(String name){
         try{
-            CSVReader reader = new CSVReader(new InputStreamReader(getResources().openRawResource(R.raw.laender)));
+            setGameMode();
+            CSVReader reader = new CSVReader(new InputStreamReader(inputStream));
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 // nextLine[] is an array of values from the line
@@ -104,14 +147,17 @@ public class GameActivity extends AppCompatActivity {
     //arrayliste mit Ländernamen füllen
     public void setArrayList(){
         try{
-            CSVReader reader = new CSVReader(new InputStreamReader(getResources().openRawResource(R.raw.laender)));
+            setGameMode();
+            CSVReader reader = new CSVReader(new InputStreamReader(inputStream));
             String [] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 // nextLine[] is an array of values from the line
                 id = nextLine[0];
                 land = nextLine[1];
                 iso = nextLine[2];
-                arrayList.add(land);
+                if(!land.equals("")) {
+                    arrayList.add(land);
+                }
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -165,7 +211,7 @@ public class GameActivity extends AppCompatActivity {
         //checkt die Antwort und verfährt dann richtig
         if(check()){
             count ++;
-            sucheIsozuInt(1 + ran.nextInt(249));
+            sucheIsozuInt(1 + ran.nextInt(csv_laenge));
             dropdown.setText("Select Country");
         }
         else{

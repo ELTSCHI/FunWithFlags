@@ -21,8 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
+        android:background="@color/purple_700"
         android:onClick="launchGame"
-        android:text="Start" />
+        android:text="Start"
+        app:iconPadding="8dp" />
 
     <TextView
         android:id="@+id/txt_highscore"

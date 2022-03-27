@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".GameModeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_europe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/purple_700"
+                android:onClick="launchEurope"
+                android:src="@mipmap/ic_launcher_custom_foreground" />
+
+            <ImageButton
+                android:id="@+id/btn_america"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/purple_700"
+                android:onClick="launchAsia"
+                android:src="@mipmap/ic_launcher_custom_foreground" />
+
+            <ImageButton
+                android:id="@+id/btn_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/purple_700"
+                android:onClick="launchMain"
+                app:srcCompat="@mipmap/ic_launcher_custom_foreground" />
+
+            <ImageButton
+                android:id="@+id/btn_oceania"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/purple_700"
+                android:onClick="launchOceania"
+                android:src="@mipmap/ic_launcher_custom_foreground" />
+
+            <ImageButton
+                android:id="@+id/btn_africa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/purple_700"
+                android:onClick="launchAfrica"
+                android:src="@mipmap/ic_launcher_custom_foreground" />
+
+            <ImageButton
+                android:id="@+id/btn_asia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/purple_700"
+                android:onClick="launchAmerica"
+                android:src="@mipmap/ic_launcher_custom_foreground" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
